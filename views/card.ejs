@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/public/stylesheets/style.css">
+    </head>
+    <body> 
+           <div class="w-full px-10 py-1.5 flex justify-between bg-black text-white">
+               <img class="hover:scale-[1.25]"
+                   src="https://imgs.search.brave.com/hkArTvo0jBpPoHXNhOn2O1JQ_PdqibLgc6tAHHjf4Uw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy8z/LzM1L1BpbnRlcmVz/dF9Mb2dvLnN2Zw.svg"
+                   width="100px">
+               <div class="flex gap-10 items-center font-semibold">
+                   <div class="hover:text-red-600 text-lg"><a href="/profile">Profile</a></div><a
+                       class="hover:text-red-600 text-lg" href="/feed">Feed</a><a
+                       class="hover:scale-[1.25] px-3 py-1 bg-red-700 text-white rounded-lg" href="/logout">Logout</a>
+               </div>
+           </div>
+           <div
+               class="flex  items-center justify-center bg-[url('https://envato-shoebox-0.imgix.net/9727/7178-ea43-440f-a374-691e81dd61e1/0238-PC080030-14-01-2024-ss-st-is-ev.JPG?auto=compress%2Cformat&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&w=1000&fit=max&markalign=center%2Cmiddle&markalpha=18&s=d8a74d7ea1d0552a30d6d084d55de598')]">
+           <div
+               class=" w-[70vw] h-[90vh] m-4 rounded-lg bg-zinc-100 flex flex-row
+               
+               ">
+            <div class="m-8 h-[80vh] w-[30vw] bg-zinc-100 rounded-lg ">
+                <img class="w-full h-full object-cover rounded-[50px]" src="/images/uploads/<%= post.postimage %>">
+            </div>
+ <div class="m-8 h-[80vh] w-[30vw] bg-zinc-700 rounded-lg flex flex-col items-center">
+    <div class="mx-5 mt-2 h-[12vh] w-[28vw] bg-red-700 flex flex-row rounded-full justify-center items-center gap-14">
+        <div id="profile" class="hover:cursor-pointer my-1 h-[10vh] w-[15vw] bg-zinc-100  rounded-full flex flex-row items-center gap-6">
+            <div class="ml-1 rounded-full h-[8vh] w-[8vh] bg-white overflow-hidden">
+                 <img class="w-full h-full object-cover " src="/images/uploads/<%=user?.profileImage %>">
+            </div>
+            <div class="flex flex-col">
+                <h1 class="px-4 mb-0 "></h1>
+                <h1 class="mt-0"><a id="link" href="/profile"><%=user.username%></a></h1>
+            </div>
+        </div>
+        <div class="my-1 mr-1 h-[6vh] w-[6vw] bg-white rounded-full flex text-center items-center justify-center">
+ follow
+        </div>
+    </div>
+    <div class="mt-2 h-[6vh] text-white w-[15vw] bg-zinc-800 rounded-full flex justify-center items-center">
+        <%=post.title %>
+    </div>
+    <div class="mt-2 p-2 text-black text-center w-[28vw] bg-zinc-300 rounded-lg">
+<%=post.discription%>
+    </div>
+ </div>
+           </div>
+           </div>
+           <script>
+               document.querySelector("#profile").addEventListener("click", function () {
+                   document.querySelector("#link").click();
+               })
+           </script>
+           <script src="https://cdn.tailwindcss.com" async defer></script>
+        <script src="" async defer></script>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+.image{
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    margin-left: 125px;
+}
+.container{
+    font-size:smaller;
+    text-align: center;
+}
+.main{
+    background-color: rgb(0, 0, 0,0.4);
+}
+
+
