@@ -11,7 +11,7 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="/stylesheets/style5.css">
 </head>
 
 <body>
@@ -25,16 +25,16 @@
                    class="hover:scale-[1.25] px-3 py-1 bg-red-700 text-white rounded-lg" href="/logout">Logout</a>
            </div>
        </div>
-    <div
+    <div id="main"
         class="w-full bg-cover min-h-screen bg-zinc-800 px-10 py-8 text-white
-        bg-[url('https://envato-shoebox-0.imgix.net/2af9/82d5-2d30-4246-b517-a71a325820e6/TVC-107.jpg?auto=compress%2Cformat&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&w=1000&fit=max&markalign=center%2Cmiddle&markalpha=18&s=177831094c99c6eb935023276443360b')]">
+      "> 
         <div class="cards flex flex-wrap gap-2">
             <% posts.forEach((elem) => {%>
-            <div class="card text-center bg-zinc-200 text-black rounded-lg">
+            <div id="card" class="card text-center bg-zinc-200 text-black rounded-lg">
                 <div class="w-40 h-40 rounded-lg overflow-hidden">
                     <img src="/images/uploads/<%= elem.postimage %>" class="w-full h-full object-cover">
                 </div>
-               <a href="/card:postId"><%=elem.title %></a>
+               <a id="link" href="/card/<%= elem._id%>"><%=elem.title %></a>
             </div>
             <% 
                 })
@@ -44,6 +44,14 @@
     </div>
     <script src="https://cdn.tailwindcss.com" async defer></script>
     <script src="" async defer></script>
+     <script>
+         const cards=document.querySelectorAll("#card")
+         cards.forEach((elem)=>{
+             elem.addEventListener("click", function () {
+             elem.querySelector("#link").click();
+             })
+         })
+     </script>
 </body>
 
 </html>

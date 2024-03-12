@@ -21,10 +21,10 @@
                      href="/logout">Logout</a>
              </div>
          </div>
-        <div
+        <div id="main"
             class="profile w-full min-h-screen bg-zinc-800
-            bg-[url('https://envato-shoebox-0.imgix.net/07de/4d52-e197-4442-aa23-6f9b305efd64/28-06-22-4.jpg?auto=compress%2Cformat&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&w=1000&fit=max&markalign=center%2Cmiddle&markalpha=18&s=bddbd6846cbcf7b60b2c3507289f06d5')]
-            text-white">
+            <!-- bg-[url('https://envato-shoebox-0.imgix.net/07de/4d52-e197-4442-aa23-6f9b305efd64/28-06-22-4.jpg?auto=compress%2Cformat&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&w=1000&fit=max&markalign=center%2Cmiddle&markalpha=18&s=bddbd6846cbcf7b60b2c3507289f06d5')]
+            text-white"> -->
             <div class="profdet  ">
                 <form id="upload" hidden action="/fileupload" method="post" enctype="multipart/form-data">
                     <input type="file" name="image">
@@ -65,8 +65,7 @@ document.querySelector("#upload input").addEventListener("change",function(){
 document.querySelector("#card").addEventListener("click",function(){
 document.querySelector("#link").click();
 })
-     </script>
-        
+    </script>
         <script src="https://cdn.tailwindcss.com" async defer></script>
     </body>
 </html>
