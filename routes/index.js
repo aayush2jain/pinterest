@@ -7,7 +7,7 @@ const localStragety=require('passport-local');
 const upload=require("./multer");
 /* GET home page. */
 passport.use(new localStragety(userModel.authenticate()));
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res, next){
   res.render('index',{nav: false});
 });
 router.get('/register',function(req,res){
@@ -28,15 +28,22 @@ router.get('/show/posts',isLoggedIn,async function(req,res){
 router.get('/card/:postId',isLoggedIn,async function(req,res){
   const user = await userModel.findOne({username: req.session.passport.user}).populate("posts");
   const postId = req.params.postId;
-  const post = user.posts.find(post => post._id.toString() == postId);
-  console.log(postId);
-  console.log(post);
+  const post = await postModel.findById(postId);
 
-    // console.log(specificPost);
     if (!post) {
       return res.status(404).send("Post not found");
     }
     res.render("card", {user,post});
+})
+router.get('/edit/:userid',isLoggedIn,async function(req,res){
+  const userid=req.params.userid;
+  const user=await userModel.findById(userid);
+  res.render('edit',{user});
+})
+router.post('/edit',isLoggedIn,async function(req,res){
+  const user= await userModel.findByIdAndUpdate({_id:req.body.user_id},{$set:{name:req.body.name}});
+  console.log(user);
+  res.redirect("/profile");
 })
 router.get('/feed',isLoggedIn,async function(req,res){
   const user = await userModel.findOne({username: req.session.passport.user})
