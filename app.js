@@ -23,6 +23,14 @@ app.use(passport.session());
 passport.serializeUser(usersRouter.serializeUser());
 passport.deserializeUser(usersRouter.deserializeUser());
 app.use(logger('dev'));
+app.use(cors(
+  {
+  origin:["https://deploy-mern-1whq.vercel.app"],
+  method:["POST","GET"],
+  credentials:true
+  }
+            ));
+mongoose.connect('mongodb+srv://aayushjain1290:QD0qtupk9BIc4sL4@cluster0.ojgke0k.mongodb.net/pin?retryWrites=true&w=majority&appName=Cluster0');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
