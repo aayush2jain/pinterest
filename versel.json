@@ -1,7 +1,7 @@
 {
   "version":2,
   "builds":[
-    {"src":"*.js","use":@vescel/node}
+    {"src":"app.js","use":@vescel/node}
   ],
   "routes":[
     {
